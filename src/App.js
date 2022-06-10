@@ -17,6 +17,7 @@ function App() {
         >
           Learn React
         </a>
+        {/* <button onClick={console}>Click Me!</button> */}
       </header>
     </div>
   );
