@@ -1,8 +1,7 @@
 import React from 'react';
-import './UserLogOut.css'
 
 class UserLogOut extends React.Component {
-  handleLogOut = () => {
+  handleLogout = () => {
     localStorage.removeItem('token')
     this.props.setUserInState(null)
   }

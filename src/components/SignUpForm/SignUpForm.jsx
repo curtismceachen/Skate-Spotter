@@ -19,7 +19,6 @@ export default class SignUpForm extends Component {
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      // 1. POST  user data to server
       const fetchResponse = await fetch('/api/users/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -28,13 +27,9 @@ export default class SignUpForm extends Component {
             email: this.state.email, 
             password: this.state.password }),
       })
-      // 2. Check fetch response before moving on
       if (!fetchResponse.ok) throw new Error('FetchFailed - Bad Request ' + fetchResponse.status)
-      // 3. decode our fetch response (resolve) to get our jwt
       let token = await fetchResponse.json()
-      // 4. stick token into local storage
       localStorage.setItem('token', token)
-      // 5. Grab user doc from token and set to state
       const userDoc = JSON.parse(atob(token.split('.')[1])).user
       this.props.setUserInState(userDoc)
 
@@ -83,7 +78,7 @@ export default class SignUpForm extends Component {
               required
             />
             <button type="submit" disabled={disable}>
-              SIGN UP
+              Sign Up
             </button>
           </form>
         </div>

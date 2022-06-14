@@ -1,18 +1,23 @@
-import logo from './logo.svg';
 import { Component } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import './App.css';
-import NewSpotPage from './pages/NewSpotPage/NewSpotPage';
-import SpotHistoryPage from './pages/SpotHistoryPage/SpotHistoryPage';
-import AuthPage from './pages/AuthPage/AuthPage';
+import NewSpot from '../NewSpot/NewSpot';
+import Spots from '../Spots/Spots';
+import Auth from '../Auth/Auth';
 
 export default class App extends Component {
   state = {
-    user: null,
+    spots: [],
+    user: null
   }
 
   setUserInState = (incomingUserData) => {
     this.setState({ user: incomingUserData })
+  }
+
+  getSpots = async () => {
+    await fetch("/api")
+      .then(res => res.json())
+      .then(data => this.setState({spots: data}))
   }
 
   componentDidMount() {
@@ -31,14 +36,15 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
+        <button onClick={this.setUserInState(null)}>clickme</button>
         { this.state.user ? 
           <Routes>
-            <Route path="/spots/new" element={<NewSpotPage setUserInState={this.setUserInState}/>} />
-            <Route path="/spots" element={<SpotHistoryPage setUserInState={this.setUserInState}/>} />
+            <Route path="/spots/new" element={<NewSpot setUserInState={this.setUserInState}/>} />
+            <Route path="/spots" element={<Spots setUserInState={this.setUserInState}/>} />
             <Route path="*" element={<Navigate to="/spots" replace />} />
           </Routes>
           :
-          <AuthPage setUserInState={this.setUserInState}/>
+          <Auth setUserInState={this.setUserInState}/>
         }
       </div>
     )
