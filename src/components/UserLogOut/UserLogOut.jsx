@@ -3,7 +3,7 @@ import React from 'react';
 class UserLogOut extends React.Component {
   handleLogout = () => {
     localStorage.removeItem('token')
-    // this.props.setUserInState(null)
+    this.props.setUserInState(null)
   }
   
   render() {

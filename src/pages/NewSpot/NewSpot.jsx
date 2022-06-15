@@ -1,4 +1,7 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
+import UserLogOut from '../../components/UserLogOut/UserLogOut'
+import React from 'react'
 
 export default class NewSpot extends Component {
     state = {
@@ -24,16 +27,19 @@ export default class NewSpot extends Component {
             },
             body: JSON.stringify(body)
         }
-        await fetch("/api/spots", options)
+        await fetch("/api", options)
+            // console.log("here here")
             .then(res => res.json())
-            .then(data => {
-                this.props.getSpots()
+            .then(() =>
+                // this.setState({spot: data}))
+                // // this.props.getSpots()
                 this.setState({
                     name: "",
                     description: "",
-                    address: ""
+                    address: "",
+                    // spots: data
                 })
-            })
+            )
     }
 
     componentDidMount() {
@@ -44,7 +50,13 @@ export default class NewSpot extends Component {
 
     render() {
         return (
-        
+            <main>
+            <nav>
+            <Link to="/spots">
+                View Skate Spots
+            </Link>
+            <UserLogOut setUserInState={this.props.setUserInState}/>
+            </nav>
             <div>
                 <label>Name:</label>
                 <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
@@ -53,8 +65,9 @@ export default class NewSpot extends Component {
                 <label>Address:</label>
                 <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 <br/>
-                <button onClick={() => alert('clicked')}>Submit</button>
+                <button onClick={this.handleSubmit}>Submit</button>
             </div>
+            </main>
         )
     }
 }

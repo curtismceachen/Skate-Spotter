@@ -21,7 +21,7 @@ export default class LoginForm extends Component {
       const fetchResponse = await fetch('/api/users/login', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: this.state.email, password: this.state.password, })
+        body: JSON.stringify({ email: this.state.email, password: this.state.password }),
       })
 
       if (!fetchResponse.ok) throw new Error('Fetch failed - Bad request')

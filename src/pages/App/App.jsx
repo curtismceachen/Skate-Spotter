@@ -47,7 +47,7 @@ export default class App extends Component {
               // {this.state.spots.map(p => (
 
               <Spots setUserInState={this.setUserInState}/>} />
-            {/* <Route path="/login" element={<Auth setUserInState={this.setUserInState}/>} /> */}
+            
             <Route path="*" element={<Navigate to="/spots" replace />} />
           </Routes>
           :

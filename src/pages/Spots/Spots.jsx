@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import UserLogOut from '../../components/UserLogOut/UserLogOut'
+import UserLogOut from '../../components/UserLogOut/UserLogOut';
+import React from "react";
 
 export default function Spots(props) {
     
@@ -11,8 +12,7 @@ export default function Spots(props) {
             <Link to="/spots/new">
                 New Skate Spot
             </Link>
-            <UserLogOut />
-            {/* setUserInState={this.props.setUserInState}/> */}
+            <UserLogOut setUserInState={props.setUserInState}/>
         </nav>
         <div className="spot">
                 {/* <p className="name">{props.spot.name}</p>

@@ -33,6 +33,7 @@ async function signup(req, res) {
 }
   
 async function login(req, res) {
+  console.log("login controller function")
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!(await bcrypt.compare(user.password, req.body.password))) throw new Error();
