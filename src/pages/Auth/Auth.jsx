@@ -12,7 +12,7 @@ export default class Auth extends React.Component {
       <main className="Auth">
         <div>
           <h3 onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
-            {this.state.showLogin ? "SIGN UP" : "LOG IN"}
+            {this.state.showLogin ? "LOG IN" : "SIGN UP"}
           </h3>
         </div>
         {/* Another ternary operator! */}

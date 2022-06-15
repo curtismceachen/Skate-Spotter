@@ -15,12 +15,13 @@ export default class App extends Component {
   }
 
   getSpots = async () => {
-    await fetch("/api")
+    await fetch("/api/spots")
       .then(res => res.json())
       .then(data => this.setState({spots: data}))
   }
 
   componentDidMount() {
+    this.getSpots()
     let token = localStorage.getItem('token')
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]))
@@ -34,19 +35,25 @@ export default class App extends Component {
   }
 
   render() {
+    // determination
+    // console.log(this.state.user)
     return (
       <div className="App">
-        <button onClick={this.setUserInState(null)}>clickme</button>
+        {/* <button onClick={this.setUserInState(null)}>clickme</button> */}
         { this.state.user ? 
           <Routes>
-            <Route path="/spots/new" element={<NewSpot setUserInState={this.setUserInState}/>} />
-            <Route path="/spots" element={<Spots setUserInState={this.setUserInState}/>} />
+            <Route path="/spots/new" element={<NewSpot user={this.state.user} setUserInState={this.setUserInState}/>} />
+            <Route path="/spots" element={
+              // {this.state.spots.map(p => (
+
+              <Spots setUserInState={this.setUserInState}/>} />
+            {/* <Route path="/login" element={<Auth setUserInState={this.setUserInState}/>} /> */}
             <Route path="*" element={<Navigate to="/spots" replace />} />
           </Routes>
           :
           <Auth setUserInState={this.setUserInState}/>
         }
       </div>
-    )
+    ) 
   }
 }

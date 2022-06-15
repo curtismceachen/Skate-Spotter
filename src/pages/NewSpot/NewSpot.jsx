@@ -7,7 +7,7 @@ export default class NewSpot extends Component {
         address: '',
     }
     
-    handleChange(e) {
+    handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value })
     }
 
@@ -24,7 +24,7 @@ export default class NewSpot extends Component {
             },
             body: JSON.stringify(body)
         }
-        await fetch("/api", options)
+        await fetch("/api/spots", options)
             .then(res => res.json())
             .then(data => {
                 this.props.getSpots()
@@ -36,11 +36,21 @@ export default class NewSpot extends Component {
             })
     }
 
+    componentDidMount() {
+        console.log(this.props.user)
+        // if (!this.props.user) {
+        //     window.location = '/login';
+    }
+
     render() {
         return (
+        
             <div>
+                <label>Name:</label>
                 <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
-                <input type="text" name="description" onChange={this.handleChange} value={this.state.description}></input>
+                <label>Description:</label>
+                <textarea type="text" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
+                <label>Address:</label>
                 <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 <br/>
                 <button onClick={() => alert('clicked')}>Submit</button>
