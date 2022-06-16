@@ -9,8 +9,8 @@ class UserLogOut extends React.Component {
   render() {
   return (
       <div className='UserLogOut'>
-        <div>Name: {this.props.name}</div>
-        <div>Email: {this.props.email}</div>
+        {/* <div>Name: {this.props.name}</div>
+        <div>Email: {this.props.email}</div> */}
         <button className="btn-sm" onClick={this.handleLogout}>Logout</button>
       </div>
   );

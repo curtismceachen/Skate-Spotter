@@ -58,12 +58,15 @@ export default class NewSpot extends Component {
             <UserLogOut setUserInState={this.props.setUserInState}/>
             </nav>
             <div>
-                <label>Name:</label>
+                <label>Name:
                 <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
-                <label>Description:</label>
+                </label><br></br>
+                <label>Description:
                 <textarea type="text" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
-                <label>Address:</label>
+                </label><br></br>
+                <label>Address:
                 <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
+                </label>
                 <br/>
                 <button onClick={this.handleSubmit}>Submit</button>
             </div>

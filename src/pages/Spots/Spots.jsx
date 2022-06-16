@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import React from "react";
+import './Spots.css';
 
 export default function Spots(props) {
     
     
     return (
-    //   { props.spot.length ?
         <main>
         <nav>
             <Link to="/spots/new">
@@ -15,13 +15,15 @@ export default function Spots(props) {
             <UserLogOut setUserInState={props.setUserInState}/>
         </nav>
         <div className="spot">
-                {/* <p className="name">{props.spot.name}</p>
-                <p className="description">{props.spot.description}</p>
-                <p className="address">{props.spot.address}</p>
-                <p className="user">{props.spot._id}</p> */}
-        {/* :
-            <span>No Spots Submitted Yet</span>
-        } */}
+            {/* {props.spots.map((s) => (
+            <div>
+                <p>{s.name}</p>
+                <p>{s.description}</p>
+                <p>{s.address}</p> */}
+            {/* </div> */}
+            {/* ))} */}
+            {/* )} */}
+                {/* <p className="user">{props.spot._id}</p> */}
         </div>
         </main>
     )
