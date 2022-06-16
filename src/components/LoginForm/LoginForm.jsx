@@ -40,8 +40,8 @@ export default class LoginForm extends Component {
   render() {
     return (
       <div>
-        <div className="form-container" onSubmit={this.handleSubmit}>
-          <form autoComplete="off">
+        <div className="form-container" >
+          <form autoComplete="off" onSubmit={this.handleSubmit} >
             <label>Email</label>
             <input
               type="text"

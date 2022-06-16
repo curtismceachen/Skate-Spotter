@@ -2,7 +2,9 @@ const Spot = require('../../models/Spot')
 
 module.exports = {
     index,
-    create
+    create,
+    update,
+    deleteOne
 }
 
 async function index(req, res) {
@@ -21,4 +23,19 @@ async function create(req, res) {
     console.log(spot)
     await spot.save();
     res.json(spot)
+}
+
+async function update(req, res) {
+    let spot = await new Spot({
+        name: req.body.name,
+        description: req.body.description,
+        address: req.body.address
+    })
+    console.log(spot)
+    await spot.save();
+    res.json(spot)
+}
+
+async function deleteOne(req, res) {
+
 }

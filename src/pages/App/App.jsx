@@ -43,10 +43,7 @@ export default class App extends Component {
         { this.state.user ? 
           <Routes>
             <Route path="/spots/new" element={<NewSpot user={this.state.user} setUserInState={this.setUserInState}/>} />
-            <Route path="/spots" element={
-              // this.state.spots.map(s => (
-              // spot={s}))
-              <Spots  setUserInState={this.setUserInState}/>} />
+            <Route path="/spots" element={<Spots spots={this.state.spots} setUserInState={this.setUserInState}/>} />
             
             <Route path="*" element={<Navigate to="/spots" replace />} />
           </Routes>

@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import UserLogOut from '../../components/UserLogOut/UserLogOut'
 import React from 'react'
+import './NewSpot.css';
 
 export default class NewSpot extends Component {
     state = {
@@ -51,20 +52,20 @@ export default class NewSpot extends Component {
     render() {
         return (
             <main>
-            <nav>
+            <nav className="nav">
             <Link to="/spots">
                 View Skate Spots
             </Link>
             <UserLogOut setUserInState={this.props.setUserInState}/>
             </nav>
             <div>
-                <label>Name:
+                <label className="input">Name:
                 <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
                 </label><br></br>
-                <label>Description:
+                <label className="input">Description: 
                 <textarea type="text" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
                 </label><br></br>
-                <label>Address:
+                <label className="input">Address: 
                 <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 </label>
                 <br/>

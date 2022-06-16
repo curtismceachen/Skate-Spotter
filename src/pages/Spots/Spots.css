@@ -1,6 +1,11 @@
-.PrevOrdersListItem {
-    width: 100%;
-    display: flex;
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spot {
+    width: 50%;
+    /* display: flex; */
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3vmin;
@@ -11,4 +16,12 @@
     border-radius: 1vmin;
     font-size: 2vmin;
     cursor: pointer;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .hidden {
+    display: none;
   }
