@@ -9,8 +9,6 @@ export default function Spots(props) {
     const [isActive, setActive] = useState({});
     const [spots, setSpots] = useState([]);
     const handleEdit = (id) => {
-        // alert(`you just clicked on ${id}`)
-        // setActive(!isActive);
         let temp = {...isActive}
         temp[id] = !temp[id]
         setActive(temp)
@@ -59,6 +57,7 @@ export default function Spots(props) {
                 <div><span className="label">Location:</span> {s.address}</div>
                 <button className="button" onClick={() => handleEdit(s._id)}>Edit</button>
                 <button className="button" onClick={() => handleDelete(s._id)}>Delete</button>
+                <br></br>
                 <div className={!isActive[s._id] ? "hidden" : null}>
                     <UpdateSpot spot={s} refresh={getSpots}/>
                 </div>

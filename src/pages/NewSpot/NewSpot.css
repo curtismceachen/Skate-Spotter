@@ -4,9 +4,12 @@
     margin-bottom: 1vmin
 }
 
+.form {
+    padding: 3vmin;
+    margin-top: 5px;
+    padding: 5px;
+}
+
 .input {
-    display: flex;
-    /* margin-top: 5px; */
-    /* margin-bottom: 1px; */
-    /* padding: 5px; */
+    padding-left: 3vmin;
 }

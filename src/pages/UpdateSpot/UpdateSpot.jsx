@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import UserLogOut from '../../components/UserLogOut/UserLogOut'
 import React from 'react'
 // import './NewSpot.css';
+import './UpdateSpot.css'
 
 export default class UpdateSpot extends Component {
     state = {
@@ -52,13 +53,13 @@ export default class UpdateSpot extends Component {
             <UserLogOut setUserInState={this.props.setUserInState}/>
             </nav> */}
             <div>
-                <label className="input"><span className="label">Name:</span>
+                <label className="inputUD"><span className="label">Name:</span>
                 <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
                 </label><br></br>
-                <label className="input"><span className="label">Description:</span>
+                <label className="inputUD"><span className="label">Description:</span>
                 <textarea type="text" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
                 </label><br></br>
-                <label className="input"><span className="label">Address:</span> 
+                <label className="inputUD"><span className="label">Address:</span> 
                 <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 </label>
                 <br/>

@@ -58,7 +58,7 @@ export default class NewSpot extends Component {
             </Link>
             <UserLogOut setUserInState={this.props.setUserInState}/>
             </nav>
-            <div>
+            <div className="form">
                 <label className="input">Name:
                 <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
                 </label><br></br>
@@ -69,7 +69,7 @@ export default class NewSpot extends Component {
                 <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 </label>
                 <br/>
-                <button onClick={this.handleSubmit}>Submit</button>
+                <button className="button" onClick={this.handleSubmit}>Submit</button>
             </div>
             </main>
         )
