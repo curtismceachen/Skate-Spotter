@@ -1,17 +1,47 @@
 import { Link } from "react-router-dom";
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './Spots.css';
 import { set } from "mongoose";
 import UpdateSpot from '../UpdateSpot/UpdateSpot';
 
 export default function Spots(props) {
-    const [isActive, setActive] = useState(false);
-    
+    const [isActive, setActive] = useState({});
+    const [spots, setSpots] = useState([]);
     const handleEdit = (id) => {
         // alert(`you just clicked on ${id}`)
-        setActive(!isActive);
+        // setActive(!isActive);
+        let temp = {...isActive}
+        temp[id] = !temp[id]
+        setActive(temp)
     }
+    const handleDelete = async (id) => {
+        let body = {}
+        let options = {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }
+        await fetch(`api/spots/${id}`, options)
+            .then(res => res.json())
+            await getSpots()
+    }
+
+    let getSpots = async () => {
+        await fetch("/api/spots")
+          .then(res => res.json())
+          .then(data => setSpots(data))
+      }
+
+    useEffect(() => {
+        
+        (async() => {
+            await getSpots()
+        })()
+    },[])
+    
     
     return (
         <main>
@@ -22,15 +52,15 @@ export default function Spots(props) {
             <UserLogOut setUserInState={props.setUserInState}/>
         </nav>
         <div className="spot">
-            {props.spots.map((s) => (
+            {spots.map((s) => (
             <div>
-                <div>{s.name}</div>
-                <div>{s.description}</div>
-                <div>{s.address}</div>
-                <button onClick={() => handleEdit(s._id)}>Edit</button>
-                
-                <div className={isActive ? "hidden" : null}>
-                    <UpdateSpot spot={s} />
+                <div><span className="label">Name:</span> {s.name}</div>
+                <div><span className="label">Description:</span> {s.description}</div>
+                <div><span className="label">Location:</span> {s.address}</div>
+                <button className="button" onClick={() => handleEdit(s._id)}>Edit</button>
+                <button className="button" onClick={() => handleDelete(s._id)}>Delete</button>
+                <div className={!isActive[s._id] ? "hidden" : null}>
+                    <UpdateSpot spot={s} refresh={getSpots}/>
                 </div>
                 <br></br>
             </div>

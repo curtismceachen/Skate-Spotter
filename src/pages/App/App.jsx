@@ -6,7 +6,6 @@ import Auth from '../Auth/Auth';
 
 export default class App extends Component {
   state = {
-    spots: [],
     user: null
   }
 
@@ -14,14 +13,7 @@ export default class App extends Component {
     this.setState({ user: incomingUserData })
   }
 
-  getSpots = async () => {
-    await fetch("/api/spots")
-      .then(res => res.json())
-      .then(data => this.setState({spots: data}))
-  }
-
   componentDidMount() {
-    this.getSpots()
     let token = localStorage.getItem('token')
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]))
@@ -43,7 +35,7 @@ export default class App extends Component {
         { this.state.user ? 
           <Routes>
             <Route path="/spots/new" element={<NewSpot user={this.state.user} setUserInState={this.setUserInState}/>} />
-            <Route path="/spots" element={<Spots spots={this.state.spots} setUserInState={this.setUserInState}/>} />
+            <Route path="/spots" element={<Spots setUserInState={this.setUserInState}/>} />
             
             <Route path="*" element={<Navigate to="/spots" replace />} />
           </Routes>

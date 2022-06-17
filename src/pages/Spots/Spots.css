@@ -25,3 +25,13 @@
   .hidden {
     display: none;
   }
+
+  .label {
+    font-weight: bold;
+  }
+
+  .button {
+    cursor: pointer;
+    border-radius: .5vmin;
+    margin: .4vmin;
+  }

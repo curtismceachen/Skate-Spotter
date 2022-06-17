@@ -5,21 +5,22 @@ import React from 'react'
 // import './NewSpot.css';
 
 export default class UpdateSpot extends Component {
-    // state = {
-    //     name: this.props.spot.name,
-    //     description: this.props.description,
-    //     address: this.props.address,
-    // }
+    state = {
+        name: "",
+        description: "",
+        address: "",
+    }
 
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
 
     handleSubmit = async () => {
+        console.log(this.props.spot)
         let body = {
-            name: this.props.spot.name,
-            description: this.props.spot.description,
-            address: this.props.spot.address
+            name: this.state.name,
+            description: this.state.description,
+            address: this.state.address
         }
         let options = {
             method: 'PUT',
@@ -28,8 +29,17 @@ export default class UpdateSpot extends Component {
             },
             body: JSON.stringify(body)
         }
-        await fetch("/api", options)
+        await fetch(`/api/spots/${this.props.spot._id}`, options)
             .then(res => res.json())
+            await this.props.refresh()
+    }
+
+    componentDidMount() {
+        this.setState({
+            name: this.props.spot.name,
+            description: this.props.spot.description,
+            address: this.props.spot.address,
+        })
     }
 
     render() {
@@ -42,17 +52,17 @@ export default class UpdateSpot extends Component {
             <UserLogOut setUserInState={this.props.setUserInState}/>
             </nav> */}
             <div>
-                <label className="input">Name:
-                <input type="text" name="name" onChange={this.handleChange} value={this.props.spot.name}></input>
+                <label className="input"><span className="label">Name:</span>
+                <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
                 </label><br></br>
-                <label className="input">Description: 
-                <textarea type="text" name="description" onChange={this.handleChange} value={this.props.spot.description}></textarea>
+                <label className="input"><span className="label">Description:</span>
+                <textarea type="text" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
                 </label><br></br>
-                <label className="input">Address: 
-                <input type="text" name="address" onChange={this.handleChange} value={this.props.spot.address}></input>
+                <label className="input"><span className="label">Address:</span> 
+                <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 </label>
                 <br/>
-                <button onClick={this.handleSubmit}>Submit</button>
+                <div><button className="button" onClick={this.handleSubmit}>Submit</button></div>
             </div>
             </main>
         )
