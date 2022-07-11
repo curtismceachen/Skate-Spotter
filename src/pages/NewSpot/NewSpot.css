@@ -1,4 +1,4 @@
-.nav {
+/* .nav {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1vmin
@@ -12,4 +12,22 @@
 
 .input {
     padding-left: 3vmin;
+} */
+
+.top-buffer-submit {
+    margin-top: 15px;
+}
+
+.newspot-background-image {
+    background-image: url("http://socialoffline.in/blog/wp-content/uploads/2017/04/Nikhil_2-e1491985779844.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    background-position: right;
+    box-shadow: inset 500px 0 100px 0 #FFF;
+}
+
+.fade-edge {
+    /* box-shadow: inset -350px 0 100px 0 #FFF; */
 }

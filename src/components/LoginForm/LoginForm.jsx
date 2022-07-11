@@ -1,5 +1,6 @@
 import { Component } from "react";
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default class LoginForm extends Component {
   state = {
@@ -39,9 +40,14 @@ export default class LoginForm extends Component {
 
   render() {
     return (
-      <div>
-        <div className="form-container" >
+    <main>
+        <div className="container">
+          <div className="row">
+          <div className="col-md-6"><img src="https://cdn.pixabay.com/photo/2018/07/29/19/52/skateboard-3570896_960_720.png" className="img-fluid" alt="alternatetext"></img></div>
+          <div className="col-md-6">
+            <h3 className="d-flex justify-content-center">Login</h3>
           <form autoComplete="off" onSubmit={this.handleSubmit} >
+            <div className="row">
             <label>Email</label>
             <input
               type="text"
@@ -49,7 +55,9 @@ export default class LoginForm extends Component {
               value={this.state.email}
               onChange={this.handleChange}
               required
-            />
+              />
+            </div>
+            <div className="row">
             <label>Password</label>
             <input
               type="password"
@@ -57,12 +65,17 @@ export default class LoginForm extends Component {
               value={this.state.password}
               onChange={this.handleChange}
               required
-            />
-            <button type="submit">LOG IN</button>
+              />
+            </div>
+            <div className="row">
+            <button className="btn btn-primary top-buffer" type="submit">LOG IN</button>
+            </div>
           </form>
+          </div>
+          </div>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
-      </div>
+      </main>
     );
   }
 }

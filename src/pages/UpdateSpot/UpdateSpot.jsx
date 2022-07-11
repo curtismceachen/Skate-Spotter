@@ -45,7 +45,7 @@ export default class UpdateSpot extends Component {
 
     render() {
         return (
-            <main>
+            <form onSubmit={this.handleSubmit}>
             {/* <nav className="nav">
             <Link to="/spots">
                 View Skate Spots
@@ -63,9 +63,10 @@ export default class UpdateSpot extends Component {
                 <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 </label>
                 <br/>
-                <div><button className="button" onClick={this.handleSubmit}>Submit</button></div>
+                <input type="submit"></input>
+                {/* <div><button className="button" onClick={this.handleSubmit}>Submit</button></div> */}
             </div>
-            </main>
+            </form>
         )
     }
 }

@@ -43,12 +43,14 @@ export default function Spots(props) {
     
     return (
         <main>
-        <nav className="nav">
+        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded">
+            <div className="navbar-brand brand">SkateSpotter</div>
             <Link to="/spots/new">
                 New Skate Spot
             </Link>
             <UserLogOut setUserInState={props.setUserInState}/>
         </nav>
+        <div className="spot-background-image">
         <div className="spot">
             {spots.map((s) => (
             <div>
@@ -66,6 +68,7 @@ export default function Spots(props) {
             ))}
             {/* )} */}
                 {/* <p className="user">{props.spot._id}</p> */}
+        </div>
         </div>
         </main>
     )

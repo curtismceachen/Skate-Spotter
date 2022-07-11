@@ -1,0 +1,8 @@
+.container {
+    position: relative;
+    top: 100px;
+}
+
+.top-buffer {
+    margin-top: 20px;
+}

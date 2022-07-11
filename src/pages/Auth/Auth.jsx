@@ -1,6 +1,8 @@
 import React from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import { Route, Routes } from 'react-router-dom';
+import './Auth.css'
 
 export default class Auth extends React.Component {
   state = {
@@ -10,18 +12,22 @@ export default class Auth extends React.Component {
   render() {
     return (
       <main className="Auth">
-        <div>
-          <h3 onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
-            {this.state.showLogin ? "LOG IN" : "SIGN UP"}
-          </h3>
-        </div>
+        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded">
+          <a className="navbar-brand brand">SkateSpotter</a>
+          <a className="ml-auto onClick-link" onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
+            {this.state.showLogin ? "Already signed up? LOG IN" : "Don't have an account? SIGN UP"}
+          </a>
+        </nav>
+        
         {/* Another ternary operator! */}
         {/* If showLogin is true, show the login form. If false, show the signup form */}
-        {this.state.showLogin ? (
+        
+        {this.state.showLogin ? 
           <SignUpForm setUserInState={this.props.setUserInState} />
-          ) : (
+          : 
           <LoginForm setUserInState={this.props.setUserInState} />
-        )}
+        }
+
       </main>
     );
   }

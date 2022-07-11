@@ -4,15 +4,25 @@
 }
 
 .spot {
-    width: 50%;
+    width: 40%;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: .5vmin;
     padding: 3vmin;
     /* border: .2vmin solid var(--tan-3); */
     border-radius: 1vmin;
     font-size: 2vmin;
     /* cursor: pointer; */
+  }
+
+  .spot-background-image {
+    background-image: url("https://i.guim.co.uk/img/media/193a41187a4b3c0967d4d4d172386af92d7ba4f3/994_1882_2987_1792/master/2987.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=eecf2e6e1b504e507a946125a08d5ac0");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    background-position: right;
+    box-shadow: inset 600px 0 75px 0 #FFF;
   }
 
   .show {

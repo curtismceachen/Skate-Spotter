@@ -39,9 +39,9 @@ export default class App extends Component {
             
             <Route path="*" element={<Navigate to="/spots" replace />} />
           </Routes>
-          :
-          <Auth setUserInState={this.setUserInState}/>
-        }
+            :
+            <Auth setUserInState={this.setUserInState}/>
+          }
       </div>
     ) 
   }
