@@ -19,15 +19,19 @@
 }
 
 .newspot-background-image {
-    background-image: url("http://socialoffline.in/blog/wp-content/uploads/2017/04/Nikhil_2-e1491985779844.png");
+    /* background-image: url("http://socialoffline.in/blog/wp-content/uploads/2017/04/Nikhil_2-e1491985779844.png"); */
+    background-image: url("https://i.guim.co.uk/img/media/193a41187a4b3c0967d4d4d172386af92d7ba4f3/994_1882_2987_1792/master/2987.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=eecf2e6e1b504e507a946125a08d5ac0");
     background-repeat: no-repeat;
     background-size: contain;
     width: 100vw;
     height: 100vh;
     background-position: right;
-    box-shadow: inset 500px 0 100px 0 #FFF;
+    box-shadow: inset 600px 0 100px 0 #FFF;
 }
 
-.fade-edge {
-    /* box-shadow: inset -350px 0 100px 0 #FFF; */
+.logout-position {
+    display: flex;
+    justify-content: right;
+    flex-direction: row-reverse;
+    float: right;
 }

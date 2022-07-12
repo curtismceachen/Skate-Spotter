@@ -12,8 +12,8 @@ export default class Auth extends React.Component {
   render() {
     return (
       <main className="Auth">
-        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded">
-          <a className="navbar-brand brand">SkateSpotter</a>
+        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded justify-content-between">
+          <a className="navbar-brand theme-font">SkateSpotter</a>
           <a className="ml-auto onClick-link" onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
             {this.state.showLogin ? "Already signed up? LOG IN" : "Don't have an account? SIGN UP"}
           </a>

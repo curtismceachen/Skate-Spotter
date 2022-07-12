@@ -50,12 +50,20 @@ export default class NewSpot extends Component {
     render() {
         return (
           <main>
-            <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded">
-              <div className="navbar-brand brand">SkateSpotter</div>
+            <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded justify-content-between">
+              <div className="navbar-brand theme-font">SkateSpotter</div>
+              <ul className="nav navbar-nav mr-auto">
+                <li className="nav-item">
               <Link to="/spots">
                 View Skate Spots
               </Link>
+                </li>
+              </ul>
+              {/* <ul className="navbar-nav ml-auto"> */}
+                {/* <li className="nav-item"> */}
               <UserLogOut setUserInState={this.props.setUserInState}/>
+                {/* </li> */}
+              {/* </ul> */}
             </nav>
             <main className="newspot-background-image">
              {/* <body style={{"backgroundImage: url('https://i.imgur.com/04NWxgG.jpg');"}}> */}
@@ -63,18 +71,18 @@ export default class NewSpot extends Component {
               <div className="container">
                   <div className="row">
                     <div className="col-md-6 fade-edge">
-                        <h3 className="title">Add a spot</h3>
+                        <h3 className="title theme-font">Add A Spot</h3>
                         <div className="form-group">
                           <label className="input">Name</label>
-                            <input type="text" className="form-control" name="name" onChange={this.handleChange} value={this.state.name}></input>
+                            <input type="text" className="form-control" name="name" placeholder="Name" onChange={this.handleChange} value={this.state.name}></input>
                         </div>
                         <div className="form-group">
                           <label className="input">Description</label>
-                            <textarea type="text" className="form-control" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
+                            <textarea type="text" className="form-control" name="description" placeholder="Description" onChange={this.handleChange} value={this.state.description}></textarea>
                         </div>
                         <div className="form-group">
                           <label className="input">Address</label>
-                            <input type="text" className="form-control" name="address" onChange={this.handleChange} value={this.state.address}></input>
+                            <input type="text" className="form-control" name="address" placeholder="Address" onChange={this.handleChange} value={this.state.address}></input>
                         </div>
                         <input type="submit" className="btn btn-primary top-buffer-submit"></input>
                     </div>

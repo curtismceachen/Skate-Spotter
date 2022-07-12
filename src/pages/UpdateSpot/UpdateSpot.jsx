@@ -53,16 +53,19 @@ export default class UpdateSpot extends Component {
             <UserLogOut setUserInState={this.props.setUserInState}/>
             </nav> */}
             <div>
-                <label className="inputUD"><span className="label">Name:</span>
-                <input type="text" name="name" onChange={this.handleChange} value={this.state.name}></input>
-                </label><br></br>
-                <label className="inputUD"><span className="label">Description:</span>
-                <textarea type="text" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
-                </label><br></br>
-                <label className="inputUD"><span className="label">Address:</span> 
-                <input type="text" name="address" onChange={this.handleChange} value={this.state.address}></input>
+              <div className="form-group name-update">
+                <label className="inputUD"><span className="label">Name</span></label>
+                <input type="text" className="form-control" name="name" onChange={this.handleChange} value={this.state.name}></input>
+              </div>
+              <div className="form-group">
+                <label className="inputUD"><span className="label">Description</span></label>
+                <textarea type="text" className="form-control" name="description" onChange={this.handleChange} value={this.state.description}></textarea>
+              </div>
+              <div className="form-group address-update">
+                <label className="inputUD"><span className="label">Address</span> 
+                <input type="text" className="form-control" name="address" onChange={this.handleChange} value={this.state.address}></input>
                 </label>
-                <br/>
+              </div>
                 <input type="submit"></input>
                 {/* <div><button className="button" onClick={this.handleSubmit}>Submit</button></div> */}
             </div>

@@ -1,44 +1,70 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0px !important;
+}
+
+.navbar {
+  margin-bottom: 0px !important;
 }
 
 .spot {
-    width: 40%;
-    justify-content: space-between;
-    /* align-items: center; */
-    margin-bottom: .5vmin;
-    padding: 3vmin;
-    /* border: .2vmin solid var(--tan-3); */
-    border-radius: 1vmin;
-    font-size: 2vmin;
-    /* cursor: pointer; */
-  }
+  width: 55%;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* margin-bottom: .5vmin; */
+  padding: 8vmin 5vmin 5vmin 5vmin;
+  /* border: .2vmin solid var(--tan-3); */
+  border-radius: 1vmin;
+  /* font-size: 2vmin; */
+  /* cursor: pointer; */
+  /* display: flex;
+  align-items: center; */
+}
 
-  .spot-background-image {
-    background-image: url("https://i.guim.co.uk/img/media/193a41187a4b3c0967d4d4d172386af92d7ba4f3/994_1882_2987_1792/master/2987.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=eecf2e6e1b504e507a946125a08d5ac0");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100vw;
-    height: 100vh;
-    background-position: right;
-    box-shadow: inset 600px 0 75px 0 #FFF;
-  }
+.card-spacing {
+  margin-bottom: 12px;
+}
 
-  .show {
-    display: block;
-  }
+.spot-background-image {
+  /* background-image: url("https://i.guim.co.uk/img/media/193a41187a4b3c0967d4d4d172386af92d7ba4f3/994_1882_2987_1792/master/2987.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=eecf2e6e1b504e507a946125a08d5ac0"); */
+  /* background-image: url("https://skateboardinginfo.com/wp-content/uploads/2020/10/best-skate-spots-in-california-best-skate-spots-in-america-3-1024x576.jpg"); */
+  background-image: url("https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2014/07/22/1331666045529_2/dylan-hughes-backsmith-bulgaria-rich-west");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100%;
+  background-position: right;
+  box-shadow: inset 600px 0 75px 0 #FFF;
+  background-attachment: fixed;
+}
 
-  .hidden {
-    display: none;
-  }
+.show {
+  display: block;
+}
 
-  .label {
-    font-weight: bold;
-  }
+.hidden {
+  display: none;
+}
 
-  .button {
-    cursor: pointer;
-    border-radius: .5vmin;
-    margin: .4vmin;
-  }
+.label {
+  font-weight: bold;
+}
+
+.update-button {
+  /* border-radius: .5vmin; */
+  /* margin: .4vmin; */
+  margin: 5px 6px 0 0;
+  border: none;
+}
+
+.delete-button {
+  background-color:#4a4a4a;
+  border: none;
+  margin-top: 5px;
+}
+
+.spots-title {
+  margin-bottom: 20px;
+}

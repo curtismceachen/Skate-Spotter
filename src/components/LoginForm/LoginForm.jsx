@@ -47,27 +47,29 @@ export default class LoginForm extends Component {
           <div className="col-md-6">
             <h3 className="d-flex justify-content-center">Login</h3>
           <form autoComplete="off" onSubmit={this.handleSubmit} >
-            <div className="row">
+            <div className="row form-group">
             <label>Email</label>
             <input
               type="text"
               name="email"
+              placeholder="Email"
               value={this.state.email}
               onChange={this.handleChange}
               required
               />
             </div>
-            <div className="row">
+            <div className="row form-group">
             <label>Password</label>
             <input
               type="password"
               name="password"
+              placeholder="Password"
               value={this.state.password}
               onChange={this.handleChange}
               required
               />
             </div>
-            <div className="row">
+            <div className="row form-group">
             <button className="btn btn-primary top-buffer" type="submit">LOG IN</button>
             </div>
           </form>

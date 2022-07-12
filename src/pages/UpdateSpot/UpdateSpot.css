@@ -1,13 +1,13 @@
 .inputUD {
-    width: 50%;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5vmin;
-    padding-left: 3vmin;
+    /* width: 50%; */
+/* justify-content: space-between; */
+/* align-items: center; */
+/* margin-bottom: 5vmin; */
+/* padding-left: 3vmin; */
     /* padding: 3vmin; */
     /* border: .2vmin solid var(--tan-3); */
-    border-radius: 1vmin;
-    font-size: 2vmin;
+/* border-radius: 1vmin; */
+/* font-size: 2vmin; */
 }
 
 .button {
@@ -15,4 +15,12 @@
     /* padding-left: 3vmin; */
     /* border-radius: .5vmin; */
     /* margin: .4vmin; */
+}
+
+.name-update {
+    margin-top: 10px;
+}
+
+.address-update {
+    margin-bottom: 10px;
 }

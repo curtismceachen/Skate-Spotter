@@ -43,31 +43,31 @@ export default function Spots(props) {
     
     return (
         <main>
-        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded">
-            <div className="navbar-brand brand">SkateSpotter</div>
+        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded fixed-top justify-content-between">
+            <div className="navbar-brand theme-font">SkateSpotter</div>
             <Link to="/spots/new">
-                New Skate Spot
+                Add A Skate Spot
             </Link>
             <UserLogOut setUserInState={props.setUserInState}/>
         </nav>
-        <div className="spot-background-image">
-        <div className="spot">
+        <div className="spot spot-background-image">
+          <div className="spot">
+            <h3 className="spots-title theme-font">Skate Spots</h3>
             {spots.map((s) => (
-            <div>
-                <div><span className="label">Name:</span> {s.name}</div>
-                <div><span className="label">Description:</span> {s.description}</div>
-                <div><span className="label">Location:</span> {s.address}</div>
-                <button className="button" onClick={() => handleEdit(s._id)}>Edit</button>
-                <button className="button" onClick={() => handleDelete(s._id)}>Delete</button>
-                <br></br>
+            <div className="card card-spacing">
+              <div className="card-body">
+                <h5 className="card-title"> {s.name}</h5>
+                <div className="card-text"> {s.description}</div>
+                <div><span className="label">Location: </span>{s.address}</div>
+                <button className="btn btn-primary btn-sm update-button" onClick={() => handleEdit(s._id)}>Update</button>
+                <button className="btn btn-danger btn-sm delete-button" onClick={() => handleDelete(s._id)}>Delete</button>
                 <div className={!isActive[s._id] ? "hidden" : null}>
                     <UpdateSpot spot={s} refresh={getSpots}/>
                 </div>
                 <br></br>
+              </div>
             </div>
             ))}
-            {/* )} */}
-                {/* <p className="user">{props.spot._id}</p> */}
         </div>
         </div>
         </main>
