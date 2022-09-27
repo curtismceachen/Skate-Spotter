@@ -1,6 +1,6 @@
 ## Skate Spotter
 
-This app is something I am continuing to add to, and is designed to allow skateboarders to share skateboard spots, whether it be a handrail, set of stairs, or ledge for example, with the rest of the skateboarding community. This way, when someone is in a new city and looking to get their shred on, they can simply open Skate Spotter and check for local skate spots.
+This app is something I'm continuing to add to, and is designed to allow skateboarders to share skateboard spots, whether it be a handrail, set of stairs, or ledge for example, with the rest of the skateboarding community. This way, when someone is in a new city and looking to get their shred on, they can simply open Skate Spotter and check for local skate spots.
 
 
 #### Technologies Used
