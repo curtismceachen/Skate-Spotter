@@ -29,23 +29,16 @@ export default class NewSpot extends Component {
             body: JSON.stringify(body)
         }
         await fetch("/api", options)
-            // console.log("here here")
             .then(res => res.json())
             .then(() =>
-                // this.setState({spot: data}))
-                // // this.props.getSpots()
                 this.setState({
                     name: "",
                     description: "",
                     address: "",
-                    // spots: data
                 })
             )
     }
 
-    componentDidMount() {
-        console.log(this.props.user)
-    }
 
     render() {
         return (
@@ -59,14 +52,9 @@ export default class NewSpot extends Component {
               </Link>
                 </li>
               </ul>
-              {/* <ul className="navbar-nav ml-auto"> */}
-                {/* <li className="nav-item"> */}
               <UserLogOut setUserInState={this.props.setUserInState}/>
-                {/* </li> */}
-              {/* </ul> */}
             </nav>
             <main className="newspot-background-image">
-             {/* <body style={{"backgroundImage: url('https://i.imgur.com/04NWxgG.jpg');"}}> */}
             <form onSubmit={this.handleSubmit}>
               <div className="container">
                   <div className="row">
@@ -86,27 +74,10 @@ export default class NewSpot extends Component {
                         </div>
                         <input type="submit" className="btn btn-primary top-buffer-submit"></input>
                     </div>
-                    {/* <div className="col-md-6"><img src="http://socialoffline.in/blog/wp-content/uploads/2017/04/Nikhil_2-e1491985779844.png" className="img-fluid" alt="alternatetext"></img></div> */}
-                    {/* <div className="col-md-6">  
-                      // style={{ background: `url('http://socialoffline.in/blog/wp-content/uploads/2017/04/Nikhil_2-e1491985779844.png')`, 
-                      // backgroundRepeat:"no-repeat",
-                      // backgroundSize: "contain", 
-                      // width: "100vw", 
-                      // height: "100vh", 
-                      // backgroundPosition: "right"}}>
-
-                    </div> */}
                   </div>
               </div>
             </form>
             </main>
-            {/* <div style={{ backgroundImage: `url('http://socialoffline.in/blog/wp-content/uploads/2017/04/Nikhil_2-e1491985779844.png')`, 
-              backgroundRepeat:"no-repeat",
-              backgroundSize: "contain", 
-              width: "100vw", 
-              height: "100vh", 
-              backgroundPosition: "right"}}>
-            </div> */}
           </main>
         )
     }

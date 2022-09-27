@@ -1,6 +1,5 @@
 import { Component } from "react";
 import "./SignUpForm.css"
-import { Link } from 'react-router-dom'
 
 
 export default class SignUpForm extends Component {
@@ -37,7 +36,6 @@ export default class SignUpForm extends Component {
       this.props.setUserInState(userDoc)
 
     } catch (err) {
-      console.log("SignupForm error", err);
       this.setState({ error: "Sign Up Failed - Try Again" });
     }
   };

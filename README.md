@@ -5,7 +5,7 @@ This app is something I am continuing to add to, and is designed to allow skateb
 
 Technologies Used:
 
-This app uses the MERN-stack (MongoDB/Mongoose, Express, React, Node), and uses AJAX for communication between front and backend. It also uses token-based authentication for user signup and login. Much of the styling was done using Bootstrap.
+This app uses the MERN-stack (MongoDB/Mongoose, Express, React, Node), and uses AJAX for communication between front and backend. It uses token-based authentication for user signup and login. Much of the styling was done using Bootstrap.
 
 
 Getting Started:

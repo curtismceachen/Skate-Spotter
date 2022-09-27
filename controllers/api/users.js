@@ -11,11 +11,9 @@ module.exports = {
 }
 
 async function signup(req, res) {
-  console.log("sign up function!")
   try {
-    // NOTE: here we are storing a plaintext password. VERY VERY DANGEROUS. We will replace this in a second:
+    // NOTE: here a plaintext password is being stored. Will replace this further down:
     const hashedPass = await bcrypt.hash(req.body.password, SALT_ROUNDS)
-    console.log(hashedPass)
     const user = await User.create({
         name: req.body.name, 
         email: req.body.email, 
@@ -23,8 +21,8 @@ async function signup(req, res) {
       });
   
     // creating a jwt: 
-    // the first parameter specifies what we want to put into the token (in this case, our user document)
-    // the second parameter is a "secret" code. This lets our server verify if an incoming jwt is legit or not.
+    // the first parameter specifies what to put into the token (in this case, the user document)
+    // the second parameter is a "secret" code. This lets the server verify if an incoming jwt is legit or not.
     const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' });
      res.status(200).json(token); // send it to the frontend
   } catch (err) {
@@ -33,7 +31,6 @@ async function signup(req, res) {
 }
   
 async function login(req, res) {
-  console.log("login controller function")
   try {
     const user = await User.findOne({ email: req.body.email });
     if (!(await bcrypt.compare(req.body.password, user.password))) throw new Error();
@@ -41,7 +38,6 @@ async function login(req, res) {
     const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' });
     res.status(200).json(token);
   } catch (error) {
-    console.log(error)
     res.status(400).json('Bad Credentials');
   }
 }

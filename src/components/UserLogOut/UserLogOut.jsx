@@ -8,16 +8,9 @@ class UserLogOut extends React.Component {
   }
   
   render() {
-  return (
-      // <div className="logout-position">
-      // <ul className="nav navbar-nav ml-auto">
-          // <li className="nav-item">
-        /* <div>Name: {this.props.name}</div>
-        <div>Email: {this.props.email}</div> */
-        <button className="btn btn-light" onClick={this.handleLogout}>Logout</button>
-      // </li>
-      // </ul>
-  );
+    return (
+      <button className="btn btn-light" onClick={this.handleLogout}>Logout</button>
+    );
   }
 }
 

@@ -1,6 +1,5 @@
 import { Component } from "react";
 import React from 'react';
-import { Link } from "react-router-dom";
 
 export default class LoginForm extends Component {
   state = {
@@ -33,7 +32,6 @@ export default class LoginForm extends Component {
       const userDoc = JSON.parse(atob(token.split('.')[1])).user;
       this.props.setUserInState(userDoc)
     } catch (err) {
-      console.log("SignupForm error", err);
       this.setState({ error: "Sign Up Failed - Try Again" });
     }
   };

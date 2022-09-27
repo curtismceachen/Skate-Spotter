@@ -13,21 +13,17 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-    console.log("THE CREATE FUNCTION")
     let spot = await new Spot({
         name: req.body.name,
         description: req.body.description,
         address: req.body.address,
-        // user: req.user.id
     })
-    console.log(spot)
     await spot.save();
     res.json(spot)
 }
 
 async function update(req, res) {
     let spot = await Spot.findByIdAndUpdate ( req.params.id, {
-
         name: req.body.name,
         description: req.body.description,
         address: req.body.address

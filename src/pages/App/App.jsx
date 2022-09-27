@@ -27,11 +27,8 @@ export default class App extends Component {
   }
 
   render() {
-    // determination
-    // console.log(this.state.user)
     return (
       <div className="App">
-        {/* <button onClick={this.setUserInState(null)}>clickme</button> */}
         { this.state.user ? 
           <Routes>
             <Route path="/spots/new" element={<NewSpot user={this.state.user} setUserInState={this.setUserInState}/>} />

@@ -1,7 +1,6 @@
 import React from "react";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
-import { Route, Routes } from 'react-router-dom';
 import './Auth.css'
 
 export default class Auth extends React.Component {
@@ -19,7 +18,6 @@ export default class Auth extends React.Component {
           </a>
         </nav>
         
-        {/* Another ternary operator! */}
         {/* If showLogin is true, show the login form. If false, show the signup form */}
         
         {this.state.showLogin ? 

@@ -1,8 +1,5 @@
 import { Component } from 'react'
-import { Link } from 'react-router-dom'
-import UserLogOut from '../../components/UserLogOut/UserLogOut'
 import React from 'react'
-// import './NewSpot.css';
 import './UpdateSpot.css'
 
 export default class UpdateSpot extends Component {
@@ -46,12 +43,6 @@ export default class UpdateSpot extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-            {/* <nav className="nav">
-            <Link to="/spots">
-                View Skate Spots
-            </Link>
-            <UserLogOut setUserInState={this.props.setUserInState}/>
-            </nav> */}
             <div>
               <div className="form-group name-update">
                 <label className="inputUD"><span className="label">Name</span></label>
@@ -67,7 +58,6 @@ export default class UpdateSpot extends Component {
                 </label>
               </div>
                 <input type="submit"></input>
-                {/* <div><button className="button" onClick={this.handleSubmit}>Submit</button></div> */}
             </div>
             </form>
         )

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import React, {useEffect, useState} from "react";
 import './Spots.css';
-import { set } from "mongoose";
 import UpdateSpot from '../UpdateSpot/UpdateSpot';
 
 export default function Spots(props) {
