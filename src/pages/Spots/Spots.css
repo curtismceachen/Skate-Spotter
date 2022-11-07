@@ -8,28 +8,24 @@
   margin-bottom: 0px !important;
 }
 
-.spot {
-  width: 55%;
-  /* justify-content: space-between; */
-  /* align-items: center; */
-  /* margin-bottom: .5vmin; */
-  padding: 8vmin 5vmin 5vmin 5vmin;
-  /* border: .2vmin solid var(--tan-3); */
+.spots-page {
+  padding: 5vmin 5vmin 5vmin 5vmin;
   border-radius: 1vmin;
-  /* font-size: 2vmin; */
-  /* cursor: pointer; */
-  /* display: flex;
-  align-items: center; */
+}
+
+.spots {
+  padding-left: 5vmin;
 }
 
 .card-spacing {
   margin-bottom: 12px;
+  width: 18rem;
 }
 
 .spot-background-image {
   /* background-image: url("https://i.guim.co.uk/img/media/193a41187a4b3c0967d4d4d172386af92d7ba4f3/994_1882_2987_1792/master/2987.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=eecf2e6e1b504e507a946125a08d5ac0"); */
-  /* background-image: url("https://skateboardinginfo.com/wp-content/uploads/2020/10/best-skate-spots-in-california-best-skate-spots-in-america-3-1024x576.jpg"); */
-  background-image: url("https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2014/07/22/1331666045529_2/dylan-hughes-backsmith-bulgaria-rich-west");
+  background-image: url("https://skateboardinginfo.com/wp-content/uploads/2020/10/best-skate-spots-in-california-best-skate-spots-in-america-3-1024x576.jpg");
+  /* background-image: url("https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2014/07/22/1331666045529_2/dylan-hughes-backsmith-bulgaria-rich-west"); */
   background-repeat: no-repeat;
   background-size: contain;
   width: 100vw;
@@ -48,13 +44,7 @@
   display: none;
 }
 
-.label {
-  font-weight: bold;
-}
-
 .update-button {
-  /* border-radius: .5vmin; */
-  /* margin: .4vmin; */
   margin: 5px 6px 0 0;
   border: none;
 }
@@ -66,5 +56,25 @@
 }
 
 .spots-title {
-  margin-bottom: 20px;
+  padding: 17vmin 5vmin 0vmin 10vmin;
+  margin: 0 0 0 0
+}
+
+.spots-subtitle {
+  padding-left: 10vmin;
+}
+
+.image-size {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.card-spacing {
+  padding: 0;
+  margin: 12px 12px 12px 12px;
+}
+
+.logo-link {
+  text-decoration: 'none';
 }

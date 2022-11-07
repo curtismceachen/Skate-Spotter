@@ -1,4 +1,7 @@
 const Spot = require('../../models/Spot')
+const aws = require('aws-sdk')
+const fs = require('fs')
+
 
 module.exports = {
     index,
@@ -12,18 +15,42 @@ async function index(req, res) {
     res.json(spots)
 }
 
-async function create(req, res) {
-    let spot = await new Spot({
-        name: req.body.name,
-        description: req.body.description,
-        address: req.body.address,
+const s3 = new aws.S3({
+    accessKeyId: process.env.S3_ACCESS_KEY,
+    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+    region: process.env.S3_BUCKET_REGION
+})
+
+async function create(req, res) { 
+    function uploadFile(file) {
+        const fileStream = fs.createReadStream(file.path)
+        const uploadParams = {
+            Bucket: 'skatespotter',
+            Body: fileStream,
+            Key: file.filename
+        }
+        return s3.upload(uploadParams).promise()
+    }
+    const file = req.file
+    const result = await uploadFile(file)
+
+    fs.unlink(req.file.path, async function (err) {
+        if (err)
+            return res.status(400).json({ success: false, message: err.message })
+            
+        let spot = new Spot({
+            name: req.body.name,
+            description: req.body.description,
+            address: req.body.address,
+            photoUrl: result.Location
+        })
+        await spot.save(); 
+        res.json(spot)
     })
-    await spot.save();
-    res.json(spot)
 }
 
 async function update(req, res) {
-    let spot = await Spot.findByIdAndUpdate ( req.params.id, {
+    let spot = await Spot.findByIdAndUpdate(req.params.id, {
         name: req.body.name,
         description: req.body.description,
         address: req.body.address
@@ -32,6 +59,6 @@ async function update(req, res) {
 }
 
 async function deleteOne(req, res) {
-    let spot = await Spot.findByIdAndDelete (req.params.id)
+    let spot = await Spot.findByIdAndDelete(req.params.id)
     res.json(spot)
 }

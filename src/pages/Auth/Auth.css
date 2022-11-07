@@ -1,7 +1,11 @@
 .theme-font {
-    font-family: 'Bangers', cursive;
+  font-family: 'Bangers', cursive;
+}
+
+.secondary-font {
+  font-family: 'Oswald', sans-serif;
 }
 
 .onClick-link {
-    cursor: pointer;
+  cursor: pointer;
 }

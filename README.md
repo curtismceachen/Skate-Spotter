@@ -16,8 +16,3 @@ The app is deployed to Heroku and can be found at this link: https://blooming-wi
 #### Next Steps/Current Tasks
 
 Currently completing image upload functionality, along with browser-based geolocation for each skateboard spot. The ability to search and filter skateboard spots by name or location will also be added.
-
-
-
-
-
