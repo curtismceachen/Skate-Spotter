@@ -11,6 +11,4 @@ router.post("/", upload.single('image'), spotCtrl.create)
 router.put("/:id", spotCtrl.update)
 router.delete("/:id", spotCtrl.delete)
 
-
-
 module.exports = router

@@ -16,7 +16,7 @@ async function index(req, res) {
 }
 
 const s3 = new aws.S3({
-    accessKeyId: process.env.S3_ACCESS_KEY,
+    accessKeyId: process.env.S3_ACCESS_ID,
     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
     region: process.env.S3_BUCKET_REGION
 })
