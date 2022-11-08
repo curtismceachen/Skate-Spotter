@@ -44,18 +44,18 @@ export default function Spots(props) {
     
     return (
         <main>
-        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded fixed-top justify-content-between">
-          <div className="navbar-brand theme-font">SkateSpotter</div>
-          <div className="theme-font">
-            <Link to="/spots/new" style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                Add A Skate Spot
-            </Link>
-          </div>
-          <UserLogOut setUserInState={props.setUserInState}/>
-        </nav>
-        <div className="spots-page spot-background-image">
-          <h1 className="spots-title theme-font">Skate Spots</h1>
-          <div className="spots-subtitle secondary-font">The global atlas of skateboarding spots.</div>
+          <nav className="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded fixed-top justify-content-between">
+            <div className="navbar-brand theme-font">SkateSpotter</div>
+            <div className="theme-font">
+              <Link to="/spots/new" style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                  Add A Skate Spot
+              </Link>
+            </div>
+            <UserLogOut setUserInState={props.setUserInState}/>
+          </nav>
+          <div className="spots-page spot-background-image">
+            <h1 className="spots-title theme-font">Skate Spots</h1>
+            <div className="spots-subtitle secondary-font">The global atlas of skateboarding spots.</div>
             <div className="spots secondary-font">
               <div className="align-items-start spots row row-cols-3">
                 {spots.map((s) => (
