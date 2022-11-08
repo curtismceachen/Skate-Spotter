@@ -16,6 +16,7 @@ Once an account has been created and signed into, you can access the index view 
 
 <p float="middle">
     <img src="/public/images/ssidxview.PNG?raw=true" width="30%" height="30%">
+    <div></div>
     <img src="/public/images/sscreateview.PNG?raw=true" width="30%" height="30%">
 </p>
 
