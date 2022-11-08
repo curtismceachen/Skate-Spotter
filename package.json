@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": "18.0.x"
+    "node": "<= 12.16.x"
   },
   "name": "skatespotter",
   "version": "0.1.0",
