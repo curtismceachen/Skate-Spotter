@@ -11,7 +11,8 @@ This app uses the MERN-stack (MongoDB/Mongoose, Express, React, Node), and does 
 #### Getting Started
 
 The app is deployed to Heroku and can be found at this link: https://blooming-wildwood-28468.herokuapp.com/spots
-At is designed for both mobile and desktop.
+
+Designed for both mobile and desktop.
 
 Once an account has been created and signed into, you can access the index view and create view via the nav bar, as shown below. Spots can be updated/edited simply by clicking the update button for that spot, and filling out the drop-down form.
 
