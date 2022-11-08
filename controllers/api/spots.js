@@ -21,7 +21,8 @@ const s3 = new aws.S3({
     region: process.env.S3_BUCKET_REGION
 })
 
-async function create(req, res) { 
+async function create(req, res) {
+    // upload image to AWS
     function uploadFile(file) {
         const fileStream = fs.createReadStream(file.path)
         const uploadParams = {
@@ -29,27 +30,22 @@ async function create(req, res) {
             Body: fileStream,
             Key: file.filename
         }
-        console.log("made it to s3.upload(upload params...")
         return s3.upload(uploadParams).promise()
-        
     }
-    const file = req.file
-    const result = await uploadFile(file)
-    console.log("finished s3.upload")
+    const result = await uploadFile(req.file)
     
+    // delete the image from /uploads folder after posted to AWS bucket
     fs.unlink(req.file.path, async function (err) {
         if (err)
             return res.status(400).json({ success: false, message: err.message })
-        console.log("no error during unlink, made it here")
+        
         let spot = new Spot({
             name: req.body.name,
             description: req.body.description,
             address: req.body.address,
             photoUrl: result.Location
         })
-        console.log("created a new spot")
-        await spot.save(); 
-        console.log("saved it")
+        await spot.save()
         res.json(spot)
     })
 }
