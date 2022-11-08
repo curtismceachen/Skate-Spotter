@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": "18.0.x"
+  },
   "name": "skatespotter",
   "version": "0.1.0",
   "private": true,
