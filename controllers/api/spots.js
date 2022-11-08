@@ -22,7 +22,7 @@ const s3 = new aws.S3({
 })
 
 async function create(req, res) {
-    // upload image to AWS
+    // upload image to AWS bucket
     function uploadFile(file) {
         const fileStream = fs.createReadStream(file.path)
         const uploadParams = {
