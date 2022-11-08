@@ -14,8 +14,11 @@ The app is deployed to Heroku and can be found at this link: https://blooming-wi
 
 Once an account has been created and signed into, you can access the index view and create view via the nav bar, as shown below. Spots can be updated/edited simply by clicking the update button for that spot, and filling out the drop-down form.
 
-![index view](/public/images/ssidxview.PNG?raw=true "Index View")
-![create view](/public/images/sscreateview.PNG?raw=true "Create View")
+#### Index View
+<img src="/public/images/ssidxview.PNG?raw=true" width="30%" height="30%">
+
+#### Create View
+<img src="/public/images/sscreateview.PNG?raw=true" width="30%" height="30%">
 
 
 #### Next Steps/Current Tasks
